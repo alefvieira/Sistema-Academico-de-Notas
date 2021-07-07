@@ -1,0 +1,16 @@
+1
+Matematica
+60
+3
+2
+Portugues
+60
+3
+3
+informatica
+400
+3
+4
+contabilidade
+40
+3
