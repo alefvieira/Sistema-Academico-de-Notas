@@ -2,7 +2,8 @@
 #include <locale.h> // biblioteca caracteres especiais
 #include <string.h>
 #include <stdlib.h> // bibliotea que faz a leitura de caracteres digitados
-#include <conio.h> // usar getch() similar ao system("pause")
+//#include <conio.h> // usar getch() similar ao system("pause")
+// O GETCH() E' MELHOR QUE O SYSTEM("PAUSE"), POREM, ESSE COMANDO NAO FUNCIONA NO LINUX
 
 struct id_Tudo{
 	int idp ; // chave de matricula dos alunos, essa propriedade serve para criar o contador  para registrar todos os estudantes
@@ -149,7 +150,7 @@ int Matricular_Aluno_Diciplina(){
 					printf("Materia = %s\n",c_D[nM].nome_materia);
 					it.idga++;
 				}else printf("Semestre invalido.\n"); // senao semestre						
-			}else printf("\nCodigo invalido ou aluno não encontrado.\n"); // senao aluno
+			}else printf("\nCodigo invalido ou aluno not encontrado.\n"); // senao aluno
 		}else printf("Codigo da diciplina invalido.\n");// senao disciplina	
 		
 		printf("\nDeseja continuar matriculando alunos nas disciplinas:\n1 - SIM || 2 - NOT\t");
@@ -175,11 +176,11 @@ int Registrar_Notas(){
 					break;
 				}
 				else if(i >= it.idp) {
-					printf("\nO Aluno não foi encontrado.\n");
+					printf("\nO Aluno not encontrado.\n");
 					break;
 				}
 			}			
-		}else printf("\nO codigo do Aluno está inválido.\n");
+		}else printf("\nO codigo do Aluno esta´ invalido.\n");
 		
 		printf("\nDeseja continuar lançando notas: \n1 - SIM || 2 - NOT\t");
 		scanf("%d",&sair);
@@ -207,10 +208,10 @@ int regi_Notas2(int entraA){ // REGISTRO DE NOTAS PARTE-- 2
 		}//fim do FOR
 		
 		if (g_A[entraA].semestre[i] != entraS){
-			printf("\nSemestre invalido ou não encontrado.\n");	
+			printf("\nSemestre invalido ou not encontrado.\n");	
 		}
 		
-	}else printf("\nSemestre invalido ou não encontrado.\n");
+	}else printf("\nSemestre invalido ou not encontrado.\n");
 }
 int regi_Notas3(int entraA, int entraS){ // REGISTRO DE NOTAS PARTE-- 3
 		int i, entraD, dprint;
@@ -324,7 +325,7 @@ int pesquisa_Aluno(){ // função de consulta alunos
 		
 		printf("(1)\t Consultar todos os Aluno\n");
 		printf("(2)\t Consultar pelo Código do Aluno\n");
-		printf("Entre com o codigo da ação: ");
+		printf("Entre com o codigo da action: ");
 		scanf("%d",&consultaR);
 		if(consultaR == 1){ // consulta de todos os alunos
 			for(i=1;i < it.idp;i++){
@@ -354,7 +355,7 @@ int pesquisa_Aluno(){ // função de consulta alunos
 			scanf("%d",&entraA);
 
 			if(mA[entraA].key_mA <= 0) {// esse condicional vai impedir mostrar na tela os alunos que foram removidos
-				printf("Codigo do Aluno não encontrado.\n");
+				printf("Codigo do Aluno not encontrado.\n");
 				break;	
 			}else{
 				printf("\nID\t=\t %d\n",mA[entraA].key_mA);
@@ -492,7 +493,7 @@ int Consultas(){
 	printf("(1)\tPesquisar Alunos\n"); //feito
 	printf("(2)\tPesquisar Notas dos Alunos\n"); //feito
 	printf("(3)\tConsultar Disciplinas\n"); 
-	printf("Entre com o codigo da ação: ");
+	printf("Entre com o codigo da action: ");
 	scanf("%d",&consulta);
 	if(consulta == 1) pesquisa_Aluno();
 	else if (consulta == 2) pesquisa_Nota();
@@ -531,8 +532,7 @@ int acaoSisAcademico(int numero){
 	functionDisciplina();
 	functionGradeAluno();
 	printf("\nPrecione \"ENTER\" para continuar ");
-	getch();
-//	system("pause");
+	system("pause");
 }
 //funcoes que salvam as informacoes no arquivo txt
 int functionID(){ // ids
@@ -567,7 +567,8 @@ int functionGradeAluno(){
 	FILE *file_GA = fopen("Dados/cadastroGradeAluno.txt", "w");
 	if(file_GA == NULL){	
 	printf("Erro ao ler o arquivo.\n");
-	getch();
+//	system("pause");
+
 	return -1;
 	}
 	
@@ -601,7 +602,7 @@ int Function_GetFiles(){
 	FILE *fileid = fopen("Dados/IdTudo.txt", "r");
 	if(fileid == NULL) {
 		printf("Erro ao ler a arquivo IdTudo\n");
-		getch();
+		system("pause");
 		return 0;
 	}
 	fscanf(fileid,"%d %d %d ",&it.idp, &it.idcd, &it.idga);
@@ -610,7 +611,7 @@ int Function_GetFiles(){
 	FILE *file_MA = fopen("Dados/cadastroAluno.txt", "r");
 	if(file_MA == NULL) {
 		printf("Erro ao ler a arquivo cadastroAluno\n");
-		getch();
+		system("pause");
 		return 0;
 	}
 	for(i=1; i < it.idp ; i++){
@@ -622,7 +623,7 @@ int Function_GetFiles(){
 	FILE *file_DC = fopen("Dados/cadastroDisciplina.txt", "r");
 	if(file_DC == NULL) {
 		printf("Erro ao ler a arquivo cadastroDisciplina\n");
-		getch();
+		system("pause");
 		return 0;
 	}
 	for(i=1; i < it.idcd ; i++){   
@@ -634,7 +635,7 @@ int Function_GetFiles(){
 	FILE *fileGA = fopen("Dados/cadastroGradeAluno.txt", "r");
 	if(fileGA == NULL){	
 		printf("Erro ao ler o arquivo.\n");
-		getch();
+		system("pause");
 		return -1;
 	}
 	int getA, getS, getD;

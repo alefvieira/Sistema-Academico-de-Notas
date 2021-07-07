@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>  //Biblioteca matematica
 #include <locale.h> // biblioteca caracteres especiais
 #include <string.h>
 #include <stdlib.h> // bibliotea que faz a leitura de caracteres digitados
@@ -15,8 +14,8 @@ int main(){ //funcao principal que inicia o programa
 		printf(" (2) \t Cadastrar disciplina\n"); // DONE!
 		printf(" (3) \t Matricular na disciplina\n"); // DONE!
 		printf(" (4) \t Registrar notas e faltas\n"); //DONE!
-		printf(" (5) \t Remover Aluno\n");
-		printf(" (6) \t Remover disciplinas\n");
+		printf(" (5) \t Remover Aluno\n"); // DONE!
+		printf(" (6) \t Remover disciplinas\n"); // DONE!
 		printf(" (7) \t Consultas\n"); //  DONE!
 		printf(" (8) \t Sair\n"); // DONE!
 		
@@ -32,8 +31,7 @@ int main(){ //funcao principal que inicia o programa
 		}
 		system("clear || cls");
 	}
-	//if (numero == 9) acaoSisAcademico(numero);
-
+	system("pause");
     return 0;
 }
 
