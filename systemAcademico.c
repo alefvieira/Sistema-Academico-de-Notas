@@ -531,7 +531,6 @@ int acaoSisAcademico(int numero){
 	functionAluno(); // atualiza o cadastro dos alunos
 	functionDisciplina();
 	functionGradeAluno();
-	printf("\nPrecione \"ENTER\" para continuar ");
 	system("pause");
 }
 //funcoes que salvam as informacoes no arquivo txt

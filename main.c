@@ -31,7 +31,6 @@ int main(){ //funcao principal que inicia o programa
 		}
 		system("clear || cls");
 	}
-	system("pause");
     return 0;
 }
 
